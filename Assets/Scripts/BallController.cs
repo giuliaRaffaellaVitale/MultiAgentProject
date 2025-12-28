@@ -8,6 +8,8 @@ public class BallController : MonoBehaviour
 
     private int bounceCount = 0;
 
+    public bool isServeBall = false;
+
     public enum CourtSide { None, Red, Blue }
     public CourtSide lastBounceSide = CourtSide.None;
 
@@ -38,15 +40,45 @@ public class BallController : MonoBehaviour
         {
             lastTeamTouched = Team.Blue;
         }
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("redGround") )
         {
-            bounceCount++;
-            if (bounceCount > 1)
+            if (lastTeamTouched == Team.Blue)
             {
-                gameManager.OnBounceExceed();
+                bounceCount++;
+                if (bounceCount == 1)
+                {
+                    gameManager.ValidBounce(lastTeamTouched);
+                }
+                if (bounceCount > 1)
+                {
+                    gameManager.OnBounceExceed();
+                }
             }
-
-        } else if (collision.gameObject.CompareTag("outField"))
+            else
+            {
+                gameManager.InvalidBounce(lastTeamTouched);
+            }
+        }
+        if (collision.gameObject.CompareTag("blueGround"))
+        {
+            if (lastTeamTouched == Team.Red)
+            {
+                bounceCount++;
+                if (bounceCount == 1)
+                {
+                    gameManager.ValidBounce(lastTeamTouched);
+                }
+                if (bounceCount > 1)
+                {
+                    gameManager.OnBounceExceed();
+                }
+            }
+            else
+            {
+                gameManager.InvalidBounce(lastTeamTouched);
+            }
+        }
+        else if (collision.gameObject.CompareTag("outField"))
         {
             gameManager.OnOutFieldTouched(lastBounceSide);
 
@@ -65,12 +97,28 @@ public class BallController : MonoBehaviour
         }
     }
 
-    public void ResetBall(Vector3 position)
+    public void StartServe()
+    {
+        ballRb.isKinematic = false;
+        isServeBall = false;
+        gameManager.gameState = GameState.Rally;
+    }
+
+
+    public void PlaceBall(Transform pos)
     {
         bounceCount = 0;
         ballRb.linearVelocity = Vector3.zero;
         ballRb.angularVelocity = Vector3.zero;
-        transform.position = position;
+
+        ballRb.isKinematic = true;
+
+        ballRb.position = 
+            pos.position + 
+            Vector3.forward * 0.3f + 
+            Vector3.up * 0.8f;
+
+        isServeBall = true;
     }
 
 }
