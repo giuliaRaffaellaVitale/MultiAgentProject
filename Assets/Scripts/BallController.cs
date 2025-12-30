@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 using static GameManager;
 
 public class BallController : MonoBehaviour
 {
     private Rigidbody ballRb;
-    private GameManager gameManager;
+    public GameManager gameManager;
 
     private int bounceCount = 0;
 
@@ -21,13 +22,20 @@ public class BallController : MonoBehaviour
         ballRb = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (other.CompareTag("redGround"))
-            lastBounceSide = CourtSide.Red;
-
-        if (other.CompareTag("blueGround"))
-            lastBounceSide = CourtSide.Blue;
+        if (collision.CompareTag("redGround"))
+        {
+            HandleGroundBounce(CourtSide.Red);
+        }
+        else if (collision.CompareTag("blueGround"))
+        {
+            HandleGroundBounce(CourtSide.Blue);
+        }
+        else if (collision.CompareTag("outField"))
+        {
+            gameManager.OnOutFieldTouched(lastBounceSide);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,54 +43,14 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.CompareTag("redRacket"))
         {
             lastTeamTouched = Team.Red;
+            bounceCount = 0; 
         }
-        if (collision.gameObject.CompareTag("blueRacket"))
+        else if (collision.gameObject.CompareTag("blueRacket"))
         {
             lastTeamTouched = Team.Blue;
+            bounceCount = 0; 
         }
-        if (collision.gameObject.CompareTag("redGround") )
-        {
-            if (lastTeamTouched == Team.Blue)
-            {
-                bounceCount++;
-                if (bounceCount == 1)
-                {
-                    gameManager.ValidBounce(lastTeamTouched);
-                }
-                if (bounceCount > 1)
-                {
-                    gameManager.OnBounceExceed();
-                }
-            }
-            else
-            {
-                gameManager.InvalidBounce(lastTeamTouched);
-            }
-        }
-        if (collision.gameObject.CompareTag("blueGround"))
-        {
-            if (lastTeamTouched == Team.Red)
-            {
-                bounceCount++;
-                if (bounceCount == 1)
-                {
-                    gameManager.ValidBounce(lastTeamTouched);
-                }
-                if (bounceCount > 1)
-                {
-                    gameManager.OnBounceExceed();
-                }
-            }
-            else
-            {
-                gameManager.InvalidBounce(lastTeamTouched);
-            }
-        }
-        else if (collision.gameObject.CompareTag("outField"))
-        {
-            gameManager.OnOutFieldTouched(lastBounceSide);
-
-        } else if (collision.gameObject.CompareTag("courtNet"))
+        else if (collision.gameObject.CompareTag("courtNet"))
         {
             if (bounceCount == 1)
             {
@@ -120,5 +88,29 @@ public class BallController : MonoBehaviour
 
         isServeBall = true;
     }
+
+    void HandleGroundBounce(CourtSide side)
+    {
+        bounceCount++;
+        lastBounceSide = side;
+
+        Team expectedHitter = side == CourtSide.Red ? Team.Blue : Team.Red;
+
+        if (lastTeamTouched != expectedHitter)
+        {
+            gameManager.InvalidBounce(lastTeamTouched);
+            return;
+        }
+
+        if (bounceCount == 1)
+        {
+            gameManager.ValidBounce(lastTeamTouched);
+        }
+        else if (bounceCount >= 2)
+        {
+            gameManager.OnBounceExceed();
+        }
+    }
+
 
 }

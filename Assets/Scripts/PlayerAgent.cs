@@ -152,12 +152,6 @@ public class PlayerAgent : Agent
 
     public void OnRacketHit(Collision collision)
     {
-        BallController ball = collision.gameObject.GetComponent<BallController>();
-
-        if (ball.isServeBall && isPlayerServing)
-        {
-            ball.StartServe();
-        }
 
         Rigidbody ballRb = collision.rigidbody;
 

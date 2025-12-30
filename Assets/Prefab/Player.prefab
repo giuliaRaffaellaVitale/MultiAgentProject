@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6935415448683431991}
   - component: {fileID: 1042755471845087898}
   - component: {fileID: 3644810153832994835}
-  - component: {fileID: 3735603752768824059}
+  - component: {fileID: 4660002841637067596}
   m_Layer: 0
   m_Name: Racket
   m_TagString: Racket
@@ -119,8 +119,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3735603752768824059
-MeshCollider:
+--- !u!65 &4660002841637067596
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,10 +137,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2747069842685032767, guid: 8c57578dd793f62418863a116c9ce921, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 462.9633, y: 37.932247, z: 257.92538}
+  m_Center: {x: 98.1911, y: 24.303572, z: 0.2791689}
 --- !u!1 &6738182703096448492
 GameObject:
   m_ObjectHideFlags: 0

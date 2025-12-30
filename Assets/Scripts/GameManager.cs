@@ -6,15 +6,16 @@ using static BallController;
 public class GameManager : MonoBehaviour
 {
     public BallController ball;
-
     public List<PlayerAgent> redTeam;
     public List<PlayerAgent> blueTeam;
     public TeamManager teamManager;
 
     public Transform redServePosition;
-    public Transform redNotServePosition;
+    public Transform redNotServePosition1;
+    public Transform redNotServePosition2;
     public Transform blueServePosition;
-    public Transform blueNotServePosition;
+    public Transform blueNotServePosition1;
+    public Transform blueNotServePosition2;
 
     public float resetDelay = 1.5f;
     private bool resetting = false;
@@ -40,13 +41,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         redTeam[0].SetIsServing(true, true, redServePosition);
-        redTeam[1].SetIsServing(true, false, redNotServePosition);
-        foreach (var agent in blueTeam)
-        {
-            agent.SetIsServing(false, false, null);
-        }
+        redTeam[1].SetIsServing(true, false, redNotServePosition2);
+        blueTeam[0].SetIsServing (false, false, blueNotServePosition1);
+        blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
 
         ball.PlaceBall(redServePosition);
+        ball.StartServe();
     }
 
     public void OnBallHitGround(Vector3 position)
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void OnBounceExceed()
     {
+        Debug.Log("bounce exceed");
         if (ball.lastBounceSide == CourtSide.Red)
         {
             // rimbalza 2 volte nel campo rosso → punto BLU
@@ -144,20 +145,16 @@ public class GameManager : MonoBehaviour
             if (servingPlayer == ServingPlayer.Player2R)
             {
                 redTeam[1].SetIsServing(true, true, redServePosition);
-                redTeam[0].SetIsServing(true, false, redNotServePosition);
-                foreach (var agent in blueTeam)
-                {
-                    agent.SetIsServing(false, false, null);
-                }
+                redTeam[0].SetIsServing(true, false, redNotServePosition1);
+                blueTeam[0].SetIsServing(false, false, blueNotServePosition1);
+                blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
             }
             else
             {
                 redTeam[0].SetIsServing(true, true, redServePosition);
-                redTeam[1].SetIsServing(true, false, redNotServePosition);
-                foreach (var agent in blueTeam)
-                {
-                    agent.SetIsServing(false, false, null);
-                }
+                redTeam[1].SetIsServing(true, false, redNotServePosition2);
+                blueTeam[0].SetIsServing(false, false, blueNotServePosition1);
+                blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
             }
         }
         else
@@ -167,20 +164,16 @@ public class GameManager : MonoBehaviour
             if (servingPlayer == ServingPlayer.Player2B)
             {
                 blueTeam[1].SetIsServing(true, true, blueServePosition);
-                blueTeam[0].SetIsServing(true, false, blueNotServePosition);
-                foreach (var agent in redTeam)
-                {
-                    agent.SetIsServing(false, false, null);
-                }
+                blueTeam[0].SetIsServing(true, false, blueNotServePosition1);
+                redTeam[0].SetIsServing(false, false , redNotServePosition1);
+                redTeam[1].SetIsServing(false , false , redNotServePosition2);
             }
             else
             {
                 blueTeam[0].SetIsServing(true, true, blueServePosition);
-                blueTeam[1].SetIsServing(true, false, blueNotServePosition);
-                foreach (var agent in redTeam)
-                {
-                    agent.SetIsServing(false, false, null);
-                }
+                blueTeam[1].SetIsServing(true, false, blueNotServePosition2);
+                redTeam[0].SetIsServing(false, false, redNotServePosition1);
+                redTeam[1].SetIsServing(false, false, redNotServePosition2);
             }
         }
 
@@ -199,6 +192,7 @@ public class GameManager : MonoBehaviour
         var servingPosition = servingTeam == Team.Red ? redServePosition : blueServePosition;
         
         ball.PlaceBall(servingPosition);
+        ball.StartServe();
 
         gameState = GameState.Serve;
         resetting = false;
