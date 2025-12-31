@@ -14,6 +14,7 @@ public class PlayerAgent : Agent
 
     public PlayerAgent teammate;
     public List<PlayerAgent> opponents;
+    public GameManager gameManager;
 
     public int teamId;
     public bool isTeamServing;
@@ -31,19 +32,13 @@ public class PlayerAgent : Agent
     //Penality
     private const float outOfFieldPenalty = -0.3f;
     private const float ballPenalty = -0.5f;
-    private const float tooClosePenality = -0.01f;
+    private const float tooClosePenality = -0.05f;
     private const float inactivityPenality = -0.005f;
 
-    public void SetIsServing(bool team, bool player, Transform pos)
+    public void SetIsServing(bool team, bool player)
     {
+        isTeamServing = team;
         isPlayerServing = player;
-        if (team)
-        {
-            rb.position = pos.position;
-        } else
-        {
-            rb.position = rb.position;
-        }
     }
 
     public override void Initialize()
@@ -58,6 +53,11 @@ public class PlayerAgent : Agent
         rb.angularVelocity = Vector3.zero;
 
         transform.rotation = rb.rotation;
+
+        Transform spawn = gameManager.GetSpawnTransform(this);
+
+        transform.position = spawn.position;
+        transform.rotation = spawn.rotation;
 
         currentSwing = 0f;
         racketPivot.localRotation = Quaternion.identity;
@@ -99,6 +99,20 @@ public class PlayerAgent : Agent
         float rotate = actions.ContinuousActions[2];
         float swing = actions.ContinuousActions[3];
 
+        if (gameManager.gameState == GameManager.GameState.Serve)
+        {
+            if (!isPlayerServing)
+            {
+                rb.linearVelocity = Vector3.zero;
+                return;
+            }
+
+            transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.fixedDeltaTime);
+            HandleSwing(swing);
+
+            return;
+        }
+
         // Movement
         Vector3 move = new Vector3(moveX, 0, moveZ);
         rb.AddForce(move * moveSpeed, ForceMode.VelocityChange);
@@ -123,7 +137,11 @@ public class PlayerAgent : Agent
             inactivityTimer = 0f;
 
         if (inactivityTimer > 1.5f)
-            AddReward(-0.01f);
+            AddReward(inactivityPenality);
+
+        // reward for moving towards the ball
+        Vector3 toBall = (ballRb.position - transform.position).normalized;
+        AddReward(Vector3.Dot(transform.forward, toBall) * 0.001f);
 
     }
 
@@ -153,7 +171,12 @@ public class PlayerAgent : Agent
     public void OnRacketHit(Collision collision)
     {
 
-        Rigidbody ballRb = collision.rigidbody;
+        //BallController ball = collision.gameObject.GetComponent<BallController>();
+
+        if (gameManager.gameState == GameManager.GameState.Serve && isPlayerServing)
+        {
+            gameManager.StartRally();
+        }
 
         Vector3 dir = transform.forward + Vector3.up * 0.2f;
         dir.Normalize();

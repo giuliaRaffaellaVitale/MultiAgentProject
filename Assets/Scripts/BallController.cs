@@ -10,6 +10,8 @@ public class BallController : MonoBehaviour
     private int bounceCount = 0;
 
     public bool isServeBall = false;
+    public Transform BallRedServing;
+    public Transform BallBlueServing;
 
     public enum CourtSide { None, Red, Blue }
     public CourtSide lastBounceSide = CourtSide.None;
@@ -26,14 +28,17 @@ public class BallController : MonoBehaviour
     {
         if (collision.CompareTag("redGround"))
         {
+            Debug.Log("red ground touched");
             HandleGroundBounce(CourtSide.Red);
         }
         else if (collision.CompareTag("blueGround"))
         {
+            Debug.Log("blue ground touched");
             HandleGroundBounce(CourtSide.Blue);
         }
         else if (collision.CompareTag("outField"))
         {
+            Debug.Log("outside ground touched");
             gameManager.OnOutFieldTouched(lastBounceSide);
         }
     }
@@ -73,18 +78,28 @@ public class BallController : MonoBehaviour
     }
 
 
-    public void PlaceBall(Transform pos)
+    public void PlaceBall(Team servingTeam)
     {
         bounceCount = 0;
-        ballRb.linearVelocity = Vector3.zero;
-        ballRb.angularVelocity = Vector3.zero;
+        //ballRb.linearVelocity = Vector3.zero;
+        //ballRb.angularVelocity = Vector3.zero;
 
         ballRb.isKinematic = true;
 
-        ballRb.position = 
-            pos.position + 
-            Vector3.forward * 0.3f + 
-            Vector3.up * 0.8f;
+        /*
+        Transform racket = agent.racketPivot;
+
+        Vector3 spawnPos =
+            racket.position +
+            racket.forward * 0.25f +   // davanti alla racchetta
+            racket.up * 0.1f +         // leggermente sopra
+            racket.right * 0.05f;       // leggermente verso destra
+        */
+
+        if (servingTeam == Team.Red)
+            ballRb.position = BallRedServing.position;
+        else
+            ballRb.position = BallBlueServing.position;
 
         isServeBall = true;
     }
@@ -92,6 +107,8 @@ public class BallController : MonoBehaviour
     void HandleGroundBounce(CourtSide side)
     {
         bounceCount++;
+        Debug.Log("bounce: "+bounceCount);
+
         lastBounceSide = side;
 
         Team expectedHitter = side == CourtSide.Red ? Team.Blue : Team.Red;
@@ -101,15 +118,15 @@ public class BallController : MonoBehaviour
             gameManager.InvalidBounce(lastTeamTouched);
             return;
         }
-
         if (bounceCount == 1)
         {
             gameManager.ValidBounce(lastTeamTouched);
         }
         else if (bounceCount >= 2)
         {
+            Debug.Log("bounce exceeded");
             gameManager.OnBounceExceed();
-        }
+        } 
     }
 
 

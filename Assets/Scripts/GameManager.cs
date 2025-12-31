@@ -17,8 +17,13 @@ public class GameManager : MonoBehaviour
     public Transform blueNotServePosition1;
     public Transform blueNotServePosition2;
 
-    public float resetDelay = 1.5f;
+    public float resetDelay = 0.5f;
     private bool resetting = false;
+
+    private float maxServeTime = 20f;
+    private float serveTimer;
+    private int servingIndex = 0; 
+
 
     public enum Team { None, Red, Blue }
     private Team servingTeam = Team.Red;
@@ -37,16 +42,80 @@ public class GameManager : MonoBehaviour
     private const float loserPenalty = -1f;
     private const float netTouchedPenalty = -0.5f;
     private const float invalidBouncePenalty = -0.2f;
+    private const float serveTimeExceededPenalty = 0.01f;
 
     void Start()
     {
-        redTeam[0].SetIsServing(true, true, redServePosition);
+        /*redTeam[0].SetIsServing(true, true, redServePosition);
         redTeam[1].SetIsServing(true, false, redNotServePosition2);
         blueTeam[0].SetIsServing (false, false, blueNotServePosition1);
         blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
 
         ball.PlaceBall(redServePosition);
+        ball.StartServe();*/
+        SetServe(servingTeam);
+    }
+
+    void Update()
+    {
+        if (gameState == GameState.Serve)
+        {
+            serveTimer += Time.deltaTime;
+
+            if (serveTimer > maxServeTime)
+            {
+                // fallo di servizio
+
+                AssignTeamReward(servingTeam, serveTimeExceededPenalty);
+
+                EndRally();
+            }
+        }
+    }
+
+
+    public Transform GetSpawnTransform(PlayerAgent agent)
+    {
+        if (redTeam.Contains(agent))
+        {
+            if(servingTeam == Team.Red)
+            {
+                if (agent.isPlayerServing)
+                    return redServePosition;
+                else 
+                    return redNotServePosition2;
+            }
+            else
+            {
+                if (redTeam[0] == agent)
+                    return redNotServePosition1;
+                else
+                    return redNotServePosition2;
+            }
+        } 
+        else 
+        {
+            if (servingTeam == Team.Blue)
+            {
+                if (agent.isPlayerServing)
+                    return blueServePosition;
+                else
+                    return blueNotServePosition2;
+            }
+            else
+            {
+                if (blueTeam[0] == agent)
+                    return blueNotServePosition1;
+                else
+                    return blueNotServePosition2;
+            }
+        }
+    }
+
+    public void StartRally()
+    {
         ball.StartServe();
+        gameState = GameState.Rally;
     }
 
     public void OnBallHitGround(Vector3 position)
@@ -127,72 +196,46 @@ public class GameManager : MonoBehaviour
     {
         resetting = true;
 
+        servingTeam = servingTeam == Team.Red ? Team.Blue : Team.Red;
+
+        SetServe(servingTeam);
+
         foreach (var agent in redTeam)
             agent.EndEpisode();
 
         foreach (var agent in blueTeam)
             agent.EndEpisode();
 
-        Invoke(nameof(ResetRally), resetDelay);
+        //Invoke(nameof(ResetRally), resetDelay);
+        ResetRally();
     }
 
-    void SetServe(Team servingTeam)
+
+    void SetServe(Team team)
     {
-        if (servingTeam == Team.Red)
-        {
-            // alternance of servings to balance training
-            servingPlayer = servingPlayer == ServingPlayer.Player1R ? ServingPlayer.Player2R : ServingPlayer.Player1R;
-            if (servingPlayer == ServingPlayer.Player2R)
-            {
-                redTeam[1].SetIsServing(true, true, redServePosition);
-                redTeam[0].SetIsServing(true, false, redNotServePosition1);
-                blueTeam[0].SetIsServing(false, false, blueNotServePosition1);
-                blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
-            }
-            else
-            {
-                redTeam[0].SetIsServing(true, true, redServePosition);
-                redTeam[1].SetIsServing(true, false, redNotServePosition2);
-                blueTeam[0].SetIsServing(false, false, blueNotServePosition1);
-                blueTeam[1].SetIsServing(false, false, blueNotServePosition2);
-            }
-        }
-        else
-        {
-            // alternance of servings to balance training
-            servingPlayer = servingPlayer == ServingPlayer.Player1B ? ServingPlayer.Player2B : ServingPlayer.Player1B;
-            if (servingPlayer == ServingPlayer.Player2B)
-            {
-                blueTeam[1].SetIsServing(true, true, blueServePosition);
-                blueTeam[0].SetIsServing(true, false, blueNotServePosition1);
-                redTeam[0].SetIsServing(false, false , redNotServePosition1);
-                redTeam[1].SetIsServing(false , false , redNotServePosition2);
-            }
-            else
-            {
-                blueTeam[0].SetIsServing(true, true, blueServePosition);
-                blueTeam[1].SetIsServing(true, false, blueNotServePosition2);
-                redTeam[0].SetIsServing(false, false, redNotServePosition1);
-                redTeam[1].SetIsServing(false, false, redNotServePosition2);
-            }
-        }
+        servingIndex = 1 - servingIndex; // alterna 0 ↔ 1
 
+        foreach (var p in redTeam)
+            p.SetIsServing(team == Team.Red, false);
+
+        foreach (var p in blueTeam)
+            p.SetIsServing(team == Team.Blue, false);
+
+        if (team == Team.Red)
+            redTeam[servingIndex].SetIsServing(true, true);
+        else
+            blueTeam[servingIndex].SetIsServing(true, true);
     }
+
 
     void ResetRally()
     {
-        Vector3 servePos = servingTeam == Team.Red
-            ? redServePosition.position
-            : blueServePosition.position;
 
-        servingTeam = servingTeam == Team.Red ? Team.Blue : Team.Red;
-
-        SetServe(servingTeam);
-
-        var servingPosition = servingTeam == Team.Red ? redServePosition : blueServePosition;
+        //PlayerAgent agent = GetCurrentServingPlayer();
         
-        ball.PlaceBall(servingPosition);
-        ball.StartServe();
+        serveTimer = 0f;
+        ball.PlaceBall(servingTeam);
+        //ball.StartServe();
 
         gameState = GameState.Serve;
         resetting = false;
