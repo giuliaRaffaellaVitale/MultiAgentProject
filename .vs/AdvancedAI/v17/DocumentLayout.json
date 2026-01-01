@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\giuli\\AdvancedAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\playeragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playeragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,23 +38,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Player1step.cs",
+              "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player1step.cs",
+              "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player1step.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T18:30:19.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BallCurriculum1step.cs",
+              "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BallCurriculum1step.cs",
+              "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BallCurriculum1step.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T18:27:22.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Racket.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Racket.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeToolTip": "Assets\\Scripts\\Racket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:08:22.895Z"
+              "WhenOpened": "2025-12-27T17:08:22.895Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TeamManager.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\TeamManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TeamManager.cs",
@@ -62,46 +93,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BallController.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallController.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallController.cs",
               "RelativeToolTip": "Assets\\Scripts\\BallController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowFQAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowHUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:42:54.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T16:42:54.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAAAuwGsAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:30:13.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T16:30:13.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlayerAgent.cs",
-              "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\PlayerAgent.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerAgent.cs",
-              "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\PlayerAgent.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerAgent.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:04:02.406Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Library\\PackageCache\\com.unity.render-pipelines.universal@fd2e729c5297\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@fd2e729c5297\\Shaders\\Lit.shader",

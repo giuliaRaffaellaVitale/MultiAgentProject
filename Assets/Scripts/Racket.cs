@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Racket : MonoBehaviour
 {
-    public PlayerAgent agent;
+    public Player1step agent;
 
     private void OnCollisionEnter(Collision collision)
     {

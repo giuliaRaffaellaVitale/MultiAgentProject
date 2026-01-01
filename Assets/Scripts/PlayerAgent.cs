@@ -69,26 +69,27 @@ public class PlayerAgent : Agent
         // Self
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(rb.linearVelocity);
-        sensor.AddObservation(transform.forward);
+        //sensor.AddObservation(transform.forward); //to be used later
 
         // Ball
         sensor.AddObservation(ballRb.position - transform.position);
         sensor.AddObservation(ballRb.linearVelocity);
 
-        // Teammate
-        sensor.AddObservation(teammate.transform.position - transform.position);
-        sensor.AddObservation(teammate.rb.linearVelocity);
+        // Teammate, later
+        //sensor.AddObservation(teammate.transform.position - transform.position);
+        //sensor.AddObservation(teammate.rb.linearVelocity);
 
-        // Opponents
+        // Opponents, later
+        /*
         foreach (var opp in opponents)
         {
             sensor.AddObservation(opp.transform.position - transform.position);
             sensor.AddObservation(opp.rb.linearVelocity);
-        }
+        }*/
 
         // Context
         sensor.AddObservation(isPlayerServing ? 1f : 0f);
-        sensor.AddObservation(isTeamServing ? 1f : 0f);
+        //sensor.AddObservation(isTeamServing ? 1f : 0f); //later
     }
 
 
@@ -99,6 +100,7 @@ public class PlayerAgent : Agent
         float rotate = actions.ContinuousActions[2];
         float swing = actions.ContinuousActions[3];
 
+        /* later
         if (gameManager.gameState == GameManager.GameState.Serve)
         {
             if (!isPlayerServing)
@@ -111,19 +113,20 @@ public class PlayerAgent : Agent
             HandleSwing(swing);
 
             return;
-        }
+        }*/
 
         // Movement
         Vector3 move = new Vector3(moveX, 0, moveZ);
         rb.AddForce(move * moveSpeed, ForceMode.VelocityChange);
 
-        // Rotation
-        transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.fixedDeltaTime);
+        // Rotation, later
+        //transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.fixedDeltaTime);
 
         // Swing
         HandleSwing(swing);
 
-        // Penality if too close to teammate
+        // Penality if too close to teammate, later
+        /*
         float dist = Vector3.Distance(transform.position, teammate.transform.position);
         if (dist < 0.5f)
             AddReward(tooClosePenality);
@@ -138,12 +141,15 @@ public class PlayerAgent : Agent
 
         if (inactivityTimer > 1.5f)
             AddReward(inactivityPenality);
+        */
 
         // reward for moving towards the ball
-        Vector3 toBall = (ballRb.position - transform.position).normalized;
-        AddReward(Vector3.Dot(transform.forward, toBall) * 0.001f);
+        float distance = Vector3.Distance(transform.position, ballRb.position);
+        AddReward(-distance * 0.001f);
 
     }
+
+    /*later
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -151,37 +157,31 @@ public class PlayerAgent : Agent
         {
             AddReward(outOfFieldPenalty);
         }
-    }
+    }*/
 
     void HandleSwing(float swingInput)
     {
         if (swingInput > 0.5f)
-        {
-            currentSwing += swingSpeed * Time.fixedDeltaTime;
-        }
+            racketPivot.localRotation = Quaternion.Euler(-60f, 0, 0);
         else
-        {
-            currentSwing -= swingSpeed * Time.fixedDeltaTime;
-        }
-
-        currentSwing = Mathf.Clamp(currentSwing, -maxSwingAngle, maxSwingAngle);
-        racketPivot.localRotation = Quaternion.Euler(currentSwing, 0, 0);
+            racketPivot.localRotation = Quaternion.identity;
     }
 
     public void OnRacketHit(Collision collision)
     {
 
         //BallController ball = collision.gameObject.GetComponent<BallController>();
-
+        /*
         if (gameManager.gameState == GameManager.GameState.Serve && isPlayerServing)
         {
             gameManager.StartRally();
         }
+        */
+        Vector3 dir = (ballRb.position - transform.position).normalized;
+        dir.y = 0.2f;
 
-        Vector3 dir = transform.forward + Vector3.up * 0.2f;
-        dir.Normalize();
-
-        ballRb.AddForce(dir * 8f, ForceMode.VelocityChange);
+        ballRb.linearVelocity = Vector3.zero;
+        ballRb.AddForce(dir * 6f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
     }

@@ -14,11 +14,13 @@ TagManager:
   - blueGround
   - redRacket
   - blueRacket
+  - Racket
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - racket
   - Water
   - UI
   - 

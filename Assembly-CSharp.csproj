@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Racket.cs" />
     <Compile Include="Assets\Scripts\TeamManager.cs" />
+    <Compile Include="Assets\Scripts\BallCurriculum1step.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Player1step.cs" />
     <Compile Include="Assets\Scripts\PlayerAgent.cs" />
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
