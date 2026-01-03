@@ -16,6 +16,7 @@ TagManager:
   - blueRacket
   - Racket
   - Ground
+  - Body
   layers:
   - Default
   - TransparentFX

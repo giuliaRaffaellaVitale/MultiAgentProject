@@ -17,11 +17,11 @@ public class Player1step : Agent
     public bool isTeamServing;
     public bool isPlayerServing;
 
-    public float moveSpeed = 2f;
+    public float moveSpeed = 0.2f;
     public float rotationSpeed = 180f;
 
     //Reward
-    private const float racketHitReward = 0.5f;
+    private const float racketHitReward = 1f;
 
     //Penality
     private const float outOfFieldPenalty = -0.3f;
@@ -93,24 +93,39 @@ public class Player1step : Agent
         if (collision.gameObject.CompareTag("net") || collision.gameObject.CompareTag("grid"))
         {
             AddReward(tooClosePenality);
-        }
+        } 
     }
 
     void HandleSwing(float swingInput)
     {
         if (swingInput > 0.5f)
+        {
             racketPivot.localRotation = Quaternion.Euler(-60f, 0, 0);
+        }
         else
             racketPivot.localRotation = Quaternion.identity;
     }
 
     public void OnRacketHit(Collision collision)
     {
+        //fase 2
+        float height = collision.gameObject.GetComponent<Rigidbody>().position.y;
+        //float forwardDot = Vector3.Dot(transform.forward, (ballRb.position - transform.position).normalized);
+
+        if (height > -0.63f && height < 1f /*&& forwardDot > 0.3f*/)
+        {
+            Debug.Log("buon timing");
+            AddReward(0.15f); // buon timing
+        }
+        else
+            AddReward(0.05f); // hit sub-ottimale
+
+
         Vector3 dir = (ballRb.position - rb.position).normalized;
-        dir.y = 0.2f;
+        dir.y = 0.3f;
 
         ballRb.linearVelocity = Vector3.zero;
-        ballRb.AddForce(dir * 6f, ForceMode.VelocityChange);
+        ballRb.AddForce(dir * 8f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
     }

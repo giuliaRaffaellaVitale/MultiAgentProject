@@ -3,28 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\giuli\\AdvancedAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarAgent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\giuli\\AdvancedAI\\Library\\PackageCache\\com.unity.render-pipelines.universal@fd2e729c5297\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
@@ -38,50 +44,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarController.cs",
+              "RelativeDocumentMoniker": "..\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarController.cs",
+              "ToolTip": "C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarController.cs",
+              "RelativeToolTip": "..\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:11:51.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarAgent.cs",
+              "DocumentMoniker": "C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarAgent.cs",
+              "RelativeDocumentMoniker": "..\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarAgent.cs",
+              "ToolTip": "C:\\Users\\giuli\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarAgent.cs",
+              "RelativeToolTip": "..\\Desktop\\Giulia\\SistemiComplessiProgettoRL\\Cars2\\Assets\\Scripts\\CarAgent.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T23:11:25.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Player1step.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player1step.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player1step.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAowBwAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwBcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-31T18:30:19.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BallCurriculum1step.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallCurriculum1step.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
               "RelativeToolTip": "Assets\\Scripts\\BallCurriculum1step.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-31T18:27:22.287Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Racket.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Racket.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeToolTip": "Assets\\Scripts\\Racket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:08:22.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:08:22.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TeamManager.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\TeamManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TeamManager.cs",
@@ -93,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BallController.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallController.cs",
@@ -113,11 +144,12 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AgIAAMkAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:30:13.671Z"
+              "WhenOpened": "2025-12-27T16:30:13.671Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Library\\PackageCache\\com.unity.render-pipelines.universal@fd2e729c5297\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@fd2e729c5297\\Shaders\\Lit.shader",

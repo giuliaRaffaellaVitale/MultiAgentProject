@@ -17,7 +17,7 @@ behaviors:
       extrinsic:
         gamma: 0.99
         strength: 1.0
-    max_steps: 5e6
+    max_steps: 5e7
 
 environment_parameters:
   ball_speed:
@@ -25,7 +25,7 @@ environment_parameters:
       - name: slow
         completion_criteria:
           measure: reward
-          behavior: PadelAgent
+          behavior: Player
           threshold: 0.5
           min_lesson_length: 1000
         value: 2.0
@@ -33,7 +33,7 @@ environment_parameters:
       - name: medium
         completion_criteria:
           measure: reward
-          behavior: PadelAgent
+          behavior: Player
           threshold: 1.0
           min_lesson_length: 2000
         value: 4.0

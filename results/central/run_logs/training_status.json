@@ -1,0 +1,68 @@
+{
+    "ball_speed": {
+        "lesson_num": 0
+    },
+    "Player": {
+        "checkpoints": [
+            {
+                "steps": 597353,
+                "file_path": "results\\central\\Player\\Player-597353.onnx",
+                "reward": 0.2488440368021156,
+                "creation_time": 1767442732.0269568,
+                "auxillary_file_paths": [
+                    "results\\central\\Player\\Player-597353.pt"
+                ]
+            },
+            {
+                "steps": 598062,
+                "file_path": "results\\central\\Player\\Player-598062.onnx",
+                "reward": 0.1822538078687657,
+                "creation_time": 1767443017.8325434,
+                "auxillary_file_paths": [
+                    "results\\central\\Player\\Player-598062.pt"
+                ]
+            },
+            {
+                "steps": 601145,
+                "file_path": "results\\central\\Player\\Player-601145.onnx",
+                "reward": 0.41381197345591864,
+                "creation_time": 1767443270.4186456,
+                "auxillary_file_paths": [
+                    "results\\central\\Player\\Player-601145.pt"
+                ]
+            },
+            {
+                "steps": 601793,
+                "file_path": "results\\central\\Player\\Player-601793.onnx",
+                "reward": 0.40439810255448594,
+                "creation_time": 1767443413.9054108,
+                "auxillary_file_paths": [
+                    "results\\central\\Player\\Player-601793.pt"
+                ]
+            },
+            {
+                "steps": 644092,
+                "file_path": "results\\central\\Player\\Player-644092.onnx",
+                "reward": 0.5368302313706083,
+                "creation_time": 1767447809.608606,
+                "auxillary_file_paths": [
+                    "results\\central\\Player\\Player-644092.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 644092,
+            "file_path": "results\\central\\Player.onnx",
+            "reward": 0.5368302313706083,
+            "creation_time": 1767447809.608606,
+            "auxillary_file_paths": [
+                "results\\central\\Player\\Player-644092.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.9.1+cpu"
+    }
+}
