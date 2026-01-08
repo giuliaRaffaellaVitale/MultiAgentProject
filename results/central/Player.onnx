@@ -1,5 +1,5 @@
 
-pytorch	2.9.1+cpu:Ìú
+pytorch	2.9.1+cpu:­û
 î
 obs_0
 1network_body.processors.0.normalizer.running_meansubnode_sub"SubJÑ
@@ -471,25 +471,22 @@ node_div_9"DivJ[
 pkg.torch.onnx.stack_traceµFile "C:\Users\giuli\AdvancedAI\venv1\lib\site-packages\mlagents\trainers\torch_entities\networks.py", line 692, in forward
     ) = self.action_model.get_action_out(encoding, masks)
 main_graph*Bversion_numberJ  @@*v€B,network_body._body_endoder.seq_layers.0.biasj#
-locationPlayer-644092.onnx.dataj
+locationPlayer-655984.onnx.dataj
 offset0j
 length512p*x€B,network_body._body_endoder.seq_layers.2.biasj#
-locationPlayer-644092.onnx.dataj
+locationPlayer-655984.onnx.dataj
 offset512j
 length512p*IB/action_model._continuous_distribution.log_sigmaJ=V¾^E¦¾yÔ½ıº½*€B/action_model._continuous_distribution.mu.weightj#
-locationPlayer-644092.onnx.dataj
+locationPlayer-655984.onnx.dataj
 offset1024j
-length2048p*EB-action_model._continuous_distribution.mu.biasJçÚ==´e½Ş"€<fí=*qB1network_body.processors.0.normalizer.running_meanJ8˜İ5>×G?T	)>’E?|LO>H¿F?#.>ì??[K7> JA?Ç ÿ=5O7?œÛ>~ò:?*‘B1network_body.processors.1.normalizer.running_meanJX„ª=²×>ò
-=ëÓ>”T=ñ?Ø>†eş<û&Ñ>oÔ=È€Ù>æ<4§Î>†ğ<YûÔ>ÊÊÉ<šÈ>¿½<	Ğ>†–¾<†ŒÂ>éÂ¥<×«Ê>*a
-B1network_body.processors.2.normalizer.running_meanJ(]÷!>?ìü>+”Ü=æ«è>~É÷=¿ò>oe«=ÒÓ>ó’Ÿ=¤ÕÙ>*mB1network_body.processors.3.normalizer.running_meanJ4/¹Ä¿|°	¿ïíÀ¿        {5H¿A«_?šY>Ş”£½ÛÆı?Ë[°¾ÁŞY¾    *Bmemory_sizeJ    **Bcontinuous_action_output_shapeJ  €@*€;B.network_body._body_endoder.seq_layers.0.weightj#
-locationPlayer-644092.onnx.dataj
+length2048p*EB-action_model._continuous_distribution.mu.biasJçÚ==´e½Ş"€<fí=*qB1network_body.processors.0.normalizer.running_meanJ8 Ü2>FE?$M&>CcC?ÓK>LùD?üÇ>•t=?A>4>T¢??Ûöú=eñ5?%K>w9?*‘B1network_body.processors.1.normalizer.running_meanJXkê=òßÖ>‰Á
+=NÏÓ>+Ä=Œ Ø>İ =Ë Ñ>L=Ş6Ù>¿'è<ú­Î>Y±ñ<¢ÅÔ>u¿Ì<9È>%€À<béÏ>”ºÁ<›ÎÂ>uš¨<¾¦Ê>*‘B1network_body.processors.2.normalizer.running_meanJXµÏÅ: pï;Rl¹:Ïï;NdÚ:®Dğ;<­:çëï;Y2Õ:¯Kï;E¾:AŞñ;Ôk»: í;<È:«Àö;#s:±ê;ö—Ø:}Nÿ;N—:~í;*mB1network_body.processors.3.normalizer.running_meanJ4)ğº(º|ƒÒº        Ü	œ¹´kĞ9ö‡t9v*y¹Ş9”:§‰cºq}eº    *Bmemory_sizeJ    **Bcontinuous_action_output_shapeJ  €@*€GB.network_body._body_endoder.seq_layers.0.weightj#
+locationPlayer-655984.onnx.dataj
 offset3072j
-length30208p*€€B.network_body._body_endoder.seq_layers.2.weightj#
-locationPlayer-644092.onnx.dataj
-offset33280j
-length65536p*DBsqrtJ8°Ã>Z{d>:¾>]„g>IºÍ>rÚn>µ´>¬'u>zFÄ>YŠ}>‘©>®•€>~ñ·>|ç‚>*fBsqrt_1JX+õA>¦ c>³Õ8>Ü]>½ZB>
-âe>³œ1>…\>y=>pàf>()>ÆY>è­,>|Ï_>Áº>)ÉV>“>MÃ[>,^>>&V>>->„ĞZ>*6
-Bsqrt_2J(PÖº>çä“><º>«”ˆ>Kú¦>ç¿‹>"Ç>»çƒ> ;‰>§'>*BBsqrt_3J4ÎĞ;Bq¹:·Â>Q£:Q£:ú"@&c?Gs„>Ÿ?F3@xÎ?<t@Q£:*!Bscalar_tensor_default_8J    *"Bscalar_tensor_default_11J  @@*B	div_1_minJ   À*B	div_1_maxJ   @*B
+length36352p*€€B.network_body._body_endoder.seq_layers.2.weightj#
+locationPlayer-655984.onnx.dataj
+offset39424j
+length65536p*DBsqrtJ8ciÂ>´ i>Ô¼>¦l>9nÌ>j·s>õå²>4Œx>KüÂ>#–€>–ä§> >O²¶>:"„>*fBsqrt_1JXÄB>çb>˜D9>C¿]>^B>d©e>¿02>Ôn\>l=>§f>1é)>ÁY>ØB->(­_>€Ü>ÕV>K#>L¨[>×š>`@V>ab>o±Z>*fBsqrt_2JX=Ôƒ=\=Aƒ=³!'=Ğ…=Šå=ˆÖ‚=#%=‰u„=‹+=„=·Û=Â†‚=ö=ÕÓ†=Á÷=ƒ†=q&=ÉC‹=ş=)ƒ€=*BBsqrt_3J4LY=åb˜<§«?=ÛÔ¡:ÛÔ¡:=G§<×Ø<)·@</Ä=­FZ=áíD=ÛÔ¡:*!Bscalar_tensor_default_8J    *"Bscalar_tensor_default_11J  @@*B	div_1_minJ   À*B	div_1_maxJ   @*B
 add_46_minJ  @ÀZÇ
 obs_0
 
@@ -510,8 +507,7 @@ USER_INPUT"=
 obs_2
 
 s21
-
-"=
+"=
 /pkg.torch.export.graph_signature.InputSpec.kind
 USER_INPUT"=
 5pkg.torch.export.graph_signature.InputSpec.persistentNone"-
@@ -635,8 +631,7 @@ USER_INPUT"=
 1network_body.processors.2.normalizer.running_mean
 
 
-
-"9
+"9
 /pkg.torch.export.graph_signature.InputSpec.kindBUFFER"=
 5pkg.torch.export.graph_signature.InputSpec.persistentTrue"X
 !pkg.torch.onnx.original_node_name3b_network_body_processors_2_normalizer_running_meanj“
@@ -666,7 +661,7 @@ USER_INPUT"=
 .network_body._body_endoder.seq_layers.0.weight
 	
 €
-;"<
+G"<
 /pkg.torch.export.graph_signature.InputSpec.kind	PARAMETER"=
 5pkg.torch.export.graph_signature.InputSpec.persistentNone"U
 !pkg.torch.onnx.original_node_name0p_network_body__body_endoder_seq_layers_0_weightj–
@@ -691,8 +686,7 @@ $pkg.onnxscript.optimizer.folded_from ['convert_element_type_default_1', 'div_
 sqrt_2
 
 
-
-"É
+"É
 $pkg.onnxscript.optimizer.folded_from ['convert_element_type_default_2', 'div_4', 'network_body.processors.2.normalizer.normalization_steps', 'network_body.processors.2.normalizer.running_variance']jà
 sqrt_3
 
@@ -739,18 +733,15 @@ add_46_min
 sub_6
 
 s21
-
-j
+j
 div_5
 
 
-
-j
+j
 clamp_2
 
 
-
-j
+j
 sub_8
 
 s21
@@ -766,7 +757,7 @@ j
 cat
 
 
-;j
+Gj
 linear
 	
 

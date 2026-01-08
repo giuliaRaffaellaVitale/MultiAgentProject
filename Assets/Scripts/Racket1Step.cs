@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class Racket : MonoBehaviour
+public class Racket1Step : MonoBehaviour
 {
-    public P1vs1 agent;
-    public GM1vs1 gameManager;
+    public Player1step agent;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
             //Debug.Log("racket collided with ball");
-            gameManager.SetRally();
             agent.OnRacketHit(collision);
         }
     }

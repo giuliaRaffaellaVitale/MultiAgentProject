@@ -67,7 +67,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 5129
+          seed: 6786
           value: 2.0
       name: slow
       completion_criteria:
@@ -80,7 +80,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 5130
+          seed: 6787
           value: 4.0
       name: medium
       completion_criteria:
@@ -93,7 +93,7 @@ environment_parameters:
     - value:
         sampler_type: constant
         sampler_parameters:
-          seed: 5131
+          seed: 6788
           value: 6.0
       name: fast
       completion_criteria: null

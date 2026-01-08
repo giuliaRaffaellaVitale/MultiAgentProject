@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
 using static GameManager;
+using static GM1vs1;
 
 public class BallController : MonoBehaviour
 {
     private Rigidbody ballRb;
-    public GameManager gameManager;
+    public GameManager gm;
+    public GM1vs1 gameManager;
 
     private int bounceCount = 0;
 
@@ -16,7 +18,7 @@ public class BallController : MonoBehaviour
     public enum CourtSide { None, Red, Blue }
     public CourtSide lastBounceSide = CourtSide.None;
 
-    public Team lastTeamTouched = Team.None;
+    public Team1vs1 lastTeamTouched = Team1vs1.None;
 
 
     private void Awake()
@@ -39,7 +41,7 @@ public class BallController : MonoBehaviour
         else if (collision.CompareTag("outField"))
         {
             Debug.Log("outside ground touched");
-            gameManager.OnOutFieldTouched(lastBounceSide);
+            gameManager.OnOutFieldTouched(lastTeamTouched, isServeBall);
         }
     }
 
@@ -47,26 +49,29 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("redRacket"))
         {
-            lastTeamTouched = Team.Red;
+            lastTeamTouched = Team1vs1.Red;
             bounceCount = 0; 
+            isServeBall = false;
         }
         else if (collision.gameObject.CompareTag("blueRacket"))
         {
-            lastTeamTouched = Team.Blue;
+            lastTeamTouched = Team1vs1.Blue;
             bounceCount = 0; 
+            isServeBall = false;
         }
-        else if (collision.gameObject.CompareTag("courtNet"))
+        if (collision.gameObject.CompareTag("courtNet"))
         {
-            if (bounceCount == 1)
+            if (bounceCount == 0)
             {
                 bounceCount++;
             } else
             {
-                gameManager.OnNetTouched(lastTeamTouched);
+                gameManager.OnOutFieldTouched(lastTeamTouched, isServeBall);
             }
-        } else if (collision.gameObject.CompareTag("net"))
+        }
+        if (collision.gameObject.CompareTag("net"))
         {
-            gameManager.OnNetTouched(lastTeamTouched);
+            gameManager.OnOutFieldTouched(lastTeamTouched, isServeBall);
         }
     }
 
@@ -74,7 +79,7 @@ public class BallController : MonoBehaviour
     {
         ballRb.isKinematic = false;
         isServeBall = false;
-        gameManager.gameState = GameState.Rally;
+        //gameManager.gameState = GameState.Rally;
     }
 
 
@@ -111,7 +116,7 @@ public class BallController : MonoBehaviour
 
         lastBounceSide = side;
 
-        Team expectedHitter = side == CourtSide.Red ? Team.Blue : Team.Red;
+        Team1vs1 expectedHitter = side == CourtSide.Red ? Team1vs1.Blue : Team1vs1.Red;
 
         if (lastTeamTouched != expectedHitter)
         {

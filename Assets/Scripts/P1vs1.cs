@@ -1,19 +1,23 @@
-using System.Collections.Generic;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public class Player1step : Agent
+public class P1vs1 : Agent
 {
     private Rigidbody rb;
     public Rigidbody ballRb;
     public Transform racketPivot;
 
-    public Transform redServingPosition;
-    public Transform ballRedServing;
+    public P1vs1 opponent;
+    public GM1vs1 gameManager;
 
-    private const float moveSpeed = 1f;
+    public Transform servingPosition;
+
+    public int teamId;
+    public bool isPlayerServing;
+
+    public float moveSpeed = 0.2f;
     public float rotationSpeed = 180f;
 
     //Reward
@@ -26,6 +30,10 @@ public class Player1step : Agent
     private const float tooClosePenality = -0.05f;
     private const float inactivityPenality = -0.005f;
 
+    public void SetIsServing(bool player)
+    {
+        isPlayerServing = player;
+    }
 
     public override void Initialize()
     {
@@ -38,10 +46,17 @@ public class Player1step : Agent
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
-        transform.position = redServingPosition.position;
+        transform.position = gameManager.GetPlayerSpawnTransform(this).position;
 
-        ballRb.linearVelocity = Vector3.zero;
-        ballRb.position = ballRedServing.position;
+        /*
+        if (isPlayerServing)
+        {
+            ballRb.linearVelocity = Vector3.zero;
+            ballRb.position = gameManager.GetBallSpawnTransform().position;
+        }
+        */
+        //ballRb.linearVelocity = Vector3.zero;
+        //ballRb.position = gameManager.GetBallSpawnTransform().position;
     }
 
 
@@ -55,11 +70,12 @@ public class Player1step : Agent
         sensor.AddObservation(ballRb.position - transform.position);
         sensor.AddObservation(ballRb.linearVelocity);
 
-        // Phase 1, neutral observation to use the same observation size of phase 2.
-        for (int i = 0; i < 7; i++)
-        {
-            sensor.AddObservation(0f);
-        }
+        // Context
+        sensor.AddObservation(isPlayerServing ? 1f : 0f);
+
+        // Opponent 
+        sensor.AddObservation(opponent.transform.position - transform.position);
+        sensor.AddObservation(opponent.rb.linearVelocity);
     }
 
 
@@ -88,7 +104,7 @@ public class Player1step : Agent
         if (collision.gameObject.CompareTag("net") || collision.gameObject.CompareTag("grid"))
         {
             AddReward(tooClosePenality);
-        } 
+        }
     }
 
     void HandleSwing(float swingInput)
@@ -108,7 +124,7 @@ public class Player1step : Agent
 
         if (height > -0.63f && height < 1f)
         {
-            Debug.Log("buon timing");
+            Debug.Log("good timing");
             AddReward(goodTimingReward); // good timing
         }
 
@@ -117,9 +133,8 @@ public class Player1step : Agent
         dir.y = 0.3f;
 
         ballRb.linearVelocity = Vector3.zero;
-        ballRb.AddForce(dir * 8f, ForceMode.VelocityChange);
+        ballRb.AddForce(dir * 5f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
     }
-
 }

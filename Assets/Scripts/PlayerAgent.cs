@@ -75,21 +75,21 @@ public class PlayerAgent : Agent
         sensor.AddObservation(ballRb.position - transform.position);
         sensor.AddObservation(ballRb.linearVelocity);
 
-        // Teammate, later
-        //sensor.AddObservation(teammate.transform.position - transform.position);
-        //sensor.AddObservation(teammate.rb.linearVelocity);
+        // Teammate
+        sensor.AddObservation(teammate.transform.position - transform.position);
+        sensor.AddObservation(teammate.rb.linearVelocity);
 
         // Opponents, later
-        /*
+        
         foreach (var opp in opponents)
         {
             sensor.AddObservation(opp.transform.position - transform.position);
             sensor.AddObservation(opp.rb.linearVelocity);
-        }*/
+        }
 
         // Context
         sensor.AddObservation(isPlayerServing ? 1f : 0f);
-        //sensor.AddObservation(isTeamServing ? 1f : 0f); //later
+        sensor.AddObservation(isTeamServing ? 1f : 0f); 
     }
 
 
@@ -100,7 +100,6 @@ public class PlayerAgent : Agent
         float rotate = actions.ContinuousActions[2];
         float swing = actions.ContinuousActions[3];
 
-        /* later
         if (gameManager.gameState == GameManager.GameState.Serve)
         {
             if (!isPlayerServing)
@@ -113,20 +112,19 @@ public class PlayerAgent : Agent
             HandleSwing(swing);
 
             return;
-        }*/
+        }
 
         // Movement
         Vector3 move = new Vector3(moveX, 0, moveZ);
         rb.AddForce(move * moveSpeed, ForceMode.VelocityChange);
 
-        // Rotation, later
-        //transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.fixedDeltaTime);
+        // Rotation
+        transform.Rotate(Vector3.up * rotate * rotationSpeed * Time.fixedDeltaTime);
 
         // Swing
         HandleSwing(swing);
 
-        // Penality if too close to teammate, later
-        /*
+        // Penality if too close to teammate
         float dist = Vector3.Distance(transform.position, teammate.transform.position);
         if (dist < 0.5f)
             AddReward(tooClosePenality);
@@ -141,15 +139,12 @@ public class PlayerAgent : Agent
 
         if (inactivityTimer > 1.5f)
             AddReward(inactivityPenality);
-        */
-
+        
         // reward for moving towards the ball
         float distance = Vector3.Distance(transform.position, ballRb.position);
         AddReward(-distance * 0.001f);
 
     }
-
-    /*later
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -157,7 +152,7 @@ public class PlayerAgent : Agent
         {
             AddReward(outOfFieldPenalty);
         }
-    }*/
+    }
 
     void HandleSwing(float swingInput)
     {
