@@ -2,6 +2,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
+using static GM1vs1;
 
 public class P1vs1 : Agent
 {
@@ -19,10 +20,12 @@ public class P1vs1 : Agent
 
     public float moveSpeed = 0.2f;
     public float rotationSpeed = 180f;
+    private float lastDistanceToBall;
 
     //Reward
     private const float racketHitReward = 1f;
     private const float goodTimingReward = 0.15f;
+    private const float movementReward = 0.01f;
 
     //Penality
     private const float outOfFieldPenalty = -0.3f;
@@ -48,15 +51,7 @@ public class P1vs1 : Agent
 
         transform.position = gameManager.GetPlayerSpawnTransform(this).position;
 
-        /*
-        if (isPlayerServing)
-        {
-            ballRb.linearVelocity = Vector3.zero;
-            ballRb.position = gameManager.GetBallSpawnTransform().position;
-        }
-        */
-        //ballRb.linearVelocity = Vector3.zero;
-        //ballRb.position = gameManager.GetBallSpawnTransform().position;
+        lastDistanceToBall = Vector3.Distance(rb.position, ballRb.position);
     }
 
 
@@ -94,9 +89,25 @@ public class P1vs1 : Agent
         HandleSwing(swing);
 
         // reward for moving towards the ball
-        float distance = Vector3.Distance(rb.position, ballRb.position);
-        AddReward(-distance * 0.001f);
+        bool mustReceive =
+        gameManager.ball.isReceivable &&
+        gameManager.ball.expectedReceiver ==
+            (teamId == 0 ? Team1vs1.Red : Team1vs1.Blue);
 
+        if (mustReceive)
+        {
+            float currentDist = Vector3.Distance(rb.position, ballRb.position);
+            float delta = lastDistanceToBall - currentDist;
+
+            AddReward(delta * movementReward); // reward if the agent moves towards the ball
+
+            lastDistanceToBall = currentDist;
+
+            if (rb.linearVelocity.magnitude < 0.1f)
+            {
+                AddReward(inactivityPenality);
+            }
+        }
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -119,22 +130,25 @@ public class P1vs1 : Agent
 
     public void OnRacketHit(Collision collision)
     {
-        //fase 2
         float height = collision.gameObject.GetComponent<Rigidbody>().position.y;
 
         if (height > -0.63f && height < 1f)
         {
-            Debug.Log("good timing");
+            //Debug.Log("good timing");
             AddReward(goodTimingReward); // good timing
         }
-
 
         Vector3 dir = (ballRb.position - rb.position).normalized;
         dir.y = 0.3f;
 
         ballRb.linearVelocity = Vector3.zero;
-        ballRb.AddForce(dir * 5f, ForceMode.VelocityChange);
+        ballRb.AddForce(dir * 6.5f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
+    }
+
+    public void ResetDistanceToBall()
+    {
+        lastDistanceToBall = Vector3.Distance(rb.position, ballRb.position);
     }
 }

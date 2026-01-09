@@ -20,10 +20,6 @@ public class GM1vs1 : MonoBehaviour
     private bool resetting = false;
     private int count = 0;
 
-    private float maxServeTime = 20f;
-    private float serveTimer;
-    private int servingIndex = 0;
-
     public enum Team1vs1 { None, Red, Blue }
     private Team1vs1 servingTeam = Team1vs1.Red;
 
@@ -46,27 +42,13 @@ public class GM1vs1 : MonoBehaviour
     void Start()
     {
         SetServe(servingTeam);
-    }
-
-    void Update()
-    {
-        if (gameState == GameState1vs1.Serve)
-        {
-            serveTimer += Time.deltaTime;
-
-            if (serveTimer > maxServeTime)
-            {
-                // fallo di servizio
-                AssignTeamReward(servingTeam, serveTimeExceededPenalty);
-                Debug.Log("serve timer ");
-                EndRally();
-            }
-        }
+        Time.timeScale = 2f;
     }
 
     public void SetRally()
     {
         gameState = GameState1vs1.Rally;
+        ball.isServeBall = false;
     }
 
 
@@ -98,32 +80,31 @@ public class GM1vs1 : MonoBehaviour
 
     public void ValidBounce(Team1vs1 team)
     {
-        AssignTeamReward(team, validBounceReward);
+        AssignReward(team, validBounceReward);
     }
 
     public void InvalidBounce(Team1vs1 team)
     {
-        AssignTeamReward(team, invalidBouncePenalty);
-        Debug.Log("invalid bounce ");
+        AssignReward(team, invalidBouncePenalty);
+        
         EndRally();
     }
 
-    public void OnBounceExceed()
+    public void OnBounceExceed(CourtSide side)
     {
-        Debug.Log("bounce exceed");
-        if (ball.lastBounceSide == CourtSide.Red)
+        if (side == CourtSide.Red)
         {
             // rimbalza 2 volte nel campo rosso ? punto BLU
-            AssignTeamReward(Team1vs1.Blue, winningReward);
-            AssignTeamReward(Team1vs1.Red, loserPenalty);
+            AssignReward(Team1vs1.Blue, winningReward);
+            AssignReward(Team1vs1.Red, loserPenalty);
         }
         else if (ball.lastBounceSide == CourtSide.Blue)
         {
             // rimbalza 2 volte nel campo blu ? punto ROSSO
-            AssignTeamReward(Team1vs1.Red, winningReward);
-            AssignTeamReward(Team1vs1.Blue, loserPenalty);
+            AssignReward(Team1vs1.Red, winningReward);
+            AssignReward(Team1vs1.Blue, loserPenalty);
         }
-        Debug.Log("on bounce ");
+
         EndRally();
     }
 
@@ -142,21 +123,20 @@ public class GM1vs1 : MonoBehaviour
 
         winner = loser == Team1vs1.Red ? Team1vs1.Blue : Team1vs1.Red;
 
-        AssignTeamReward(winner, winningReward);
-        AssignTeamReward(loser, loserPenalty);
+        AssignReward(winner, winningReward);
+        AssignReward(loser, loserPenalty);
 
-        Debug.Log("on out ");
         EndRally();
     }
 
-    void AssignTeamReward(Team1vs1 team, float reward)
+    public void AssignReward(Team1vs1 team, float reward)
     {
         var agent = team == Team1vs1.Red ? redTeam : blueTeam;
         agent.AddReward(reward);
 
     }
 
-    void EndRally()
+    public void EndRally()
     {
         resetting = true;
 
@@ -167,7 +147,7 @@ public class GM1vs1 : MonoBehaviour
         ResetRally();
 
         count++;
-        //Debug.Log("end " + count);
+        
         redTeam.EndEpisode();
         blueTeam.EndEpisode();
 
@@ -187,7 +167,6 @@ public class GM1vs1 : MonoBehaviour
 
     void ResetRally()
     {
-        serveTimer = 0f;
         gameState = GameState1vs1.Serve;
 
         ballRb.linearVelocity = Vector3.zero;
@@ -196,6 +175,7 @@ public class GM1vs1 : MonoBehaviour
         ballRb.isKinematic = true;  
 
         ballRb.transform.position = GetBallSpawnTransform().position;
+        ball.timer = 0f;
 
         resetting = false;
     }

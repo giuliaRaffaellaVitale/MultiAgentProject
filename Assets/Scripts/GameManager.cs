@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void StartRally()
     {
-        ball.StartServe();
+        //ball.StartServe();
         gameState = GameState.Rally;
     }
 
@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviour
         //PlayerAgent agent = GetCurrentServingPlayer();
         
         serveTimer = 0f;
-        ball.PlaceBall(servingTeam);
+        //ball.PlaceBall(servingTeam);
         //ball.StartServe();
 
         gameState = GameState.Serve;

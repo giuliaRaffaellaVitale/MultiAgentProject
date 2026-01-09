@@ -35,7 +35,7 @@ public class BallCurriculum1step : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("grid"))
+        if (col.gameObject.CompareTag("courtNet"))
         {
             agent.AddReward(gridPenalty);
             agent.EndEpisode();
@@ -43,7 +43,6 @@ public class BallCurriculum1step : MonoBehaviour
 
         if (col.gameObject.CompareTag("Body"))
         {
-
             agent.AddReward(bodyCollisionPenalty);
         }
     }
