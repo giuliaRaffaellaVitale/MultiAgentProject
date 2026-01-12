@@ -2103,7 +2103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6196918420145402810, guid: 8c57578dd793f62418863a116c9ce921, type: 3}
       propertyPath: m_TagString
-      value: grid
+      value: courtNet
       objectReference: {fileID: 0}
     - target: {fileID: -5696430079032042313, guid: 8c57578dd793f62418863a116c9ce921, type: 3}
       propertyPath: m_TagString

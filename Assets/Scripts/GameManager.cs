@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public BallController ball;
     public List<PlayerAgent> redTeam;
     public List<PlayerAgent> blueTeam;
-    public TeamManager teamManager;
 
     public Transform redServePosition;
     public Transform redNotServePosition1;

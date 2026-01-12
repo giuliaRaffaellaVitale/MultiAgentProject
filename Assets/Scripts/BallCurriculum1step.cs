@@ -5,7 +5,7 @@ public class BallCurriculum1step : MonoBehaviour
     public Rigidbody rb;
     public Player1step agent;
 
-    private const float correctFieldReward = 1.5f;
+    private const float correctFieldReward = 3f;
 
     private const float outFieldPenalty = -0.35f;
     private const float groundPenalty = -0.05f;

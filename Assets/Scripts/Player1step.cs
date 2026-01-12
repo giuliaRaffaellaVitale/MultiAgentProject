@@ -26,6 +26,12 @@ public class Player1step : Agent
     private const float tooClosePenality = -0.05f;
     private const float inactivityPenality = -0.005f;
 
+    /*
+    public void Start()
+    {
+        Time.timeScale = 2f;
+    }
+    */
 
     public override void Initialize()
     {
