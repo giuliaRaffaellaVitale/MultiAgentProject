@@ -7,9 +7,9 @@ public class BallCurriculum1step : MonoBehaviour
 
     private const float correctFieldReward = 3f;
 
-    private const float outFieldPenalty = -0.35f;
-    private const float groundPenalty = -0.05f;
-    private const float gridPenalty = -0.35f;
+    private const float outFieldPenalty = -0.5f;
+    private const float groundPenalty = -0.3f;
+    private const float gridPenalty = -0.5f;
     private const float bodyCollisionPenalty = -0.3f;
 
     public void OnTriggerEnter(Collider other)
@@ -35,7 +35,7 @@ public class BallCurriculum1step : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("courtNet"))
+        if (col.gameObject.CompareTag("courtNet") || col.gameObject.CompareTag("net") || col.gameObject.CompareTag("grid"))
         {
             agent.AddReward(gridPenalty);
             agent.EndEpisode();

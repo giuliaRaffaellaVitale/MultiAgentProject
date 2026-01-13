@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4876543813821409823}
   m_Layer: 0
   m_Name: top
-  m_TagString: outField
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 3973043811774105442}
   m_Layer: 0
   m_Name: side3
-  m_TagString: outField
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,7 +566,7 @@ Transform:
   m_GameObject: {fileID: 3627953796728940949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -125.64, y: -0.527, z: -3.359}
+  m_LocalPosition: {x: -125.638, y: -0.527, z: -3.368}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1116,7 +1116,7 @@ GameObject:
   - component: {fileID: 7973182713528485934}
   m_Layer: 0
   m_Name: side4
-  m_TagString: outField
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1383,7 +1383,7 @@ GameObject:
   - component: {fileID: 6384107432685335920}
   m_Layer: 0
   m_Name: side
-  m_TagString: outField
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1491,7 +1491,7 @@ GameObject:
   - component: {fileID: 2678893153044109261}
   m_Layer: 0
   m_Name: side2
-  m_TagString: outField
+  m_TagString: grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2851,6 +2851,7 @@ MonoBehaviour:
   racketPivot: {fileID: 7666071760437099108}
   redServingPosition: {fileID: 7978961342742041192}
   ballRedServing: {fileID: 1018259253649262848}
+  blueField: {fileID: 5753426113460967823}
   rotationSpeed: 180
 --- !u!1 &7567855193683989912 stripped
 GameObject:
