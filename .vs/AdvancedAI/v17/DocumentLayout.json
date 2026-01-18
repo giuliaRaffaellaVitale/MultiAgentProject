@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\giuli\\AdvancedAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\p1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\p1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|c:\\users\\giuli\\advancedai\\assets\\scripts\\racket1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\gm1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gm1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\p1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\p1vs1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcurriculum1step.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\racket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\playeragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playeragent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\TeamManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\TeamManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|C:\\Users\\giuli\\AdvancedAI\\assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE80D13B-5022-A588-528E-A32C5E98441B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,135 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Racket1Step.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket1Step.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Racket1Step.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket1Step.cs",
               "RelativeToolTip": "Assets\\Scripts\\Racket1Step.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-08T11:48:34.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PlayerAgent.cs",
-              "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\PlayerAgent.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerAgent.cs",
-              "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\PlayerAgent.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerAgent.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAYwJoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T16:27:03.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GM1vs1.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GM1vs1.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GM1vs1.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GM1vs1.cs",
               "RelativeToolTip": "Assets\\Scripts\\GM1vs1.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAgwLUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAcwJoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T15:39:22.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T15:39:22.719Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "P1vs1.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\P1vs1.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\P1vs1.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\P1vs1.cs",
               "RelativeToolTip": "Assets\\Scripts\\P1vs1.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAgwJsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAkwIkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-03T14:37:24.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-03T14:37:24.191Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Player1step.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player1step.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Player1step.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player1step.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAkwIUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwEsAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T18:30:19.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T18:30:19.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "BallCurriculum1step.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallCurriculum1step.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallCurriculum1step.cs",
               "RelativeToolTip": "Assets\\Scripts\\BallCurriculum1step.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAkwCYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwCYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T18:27:22.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T18:27:22.287Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Racket.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Racket.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\Racket.cs",
               "RelativeToolTip": "Assets\\Scripts\\Racket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:08:22.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:08:22.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TeamManager.cs",
-              "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\TeamManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TeamManager.cs",
-              "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\TeamManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TeamManager.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:42:59.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "BallController.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallController.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\BallController.cs",
               "RelativeToolTip": "Assets\\Scripts\\BallController.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAkwM0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAAowB4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:42:54.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T16:42:54.475Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\giuli\\AdvancedAI\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAuwOwAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAwOwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:30:13.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T16:30:13.671Z"
             }
           ]
         }

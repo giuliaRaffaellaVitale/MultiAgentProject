@@ -1,13 +1,11 @@
 using System;
 using Unity.MLAgents;
 using UnityEngine;
-using static GameManager;
 using static GM1vs1;
 
 public class BallController : MonoBehaviour
 {
     private Rigidbody ballRb;
-    public GameManager gm;
     public GM1vs1 gameManager;
 
     private int bounceCount = 0;

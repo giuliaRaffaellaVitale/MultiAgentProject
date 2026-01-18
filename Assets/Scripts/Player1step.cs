@@ -14,8 +14,7 @@ public class Player1step : Agent
     public Transform ballRedServing;
     public Transform blueField;
 
-    private const float moveSpeed = 1f;
-    public float rotationSpeed = 180f;
+    private const float moveSpeed = 0.2f;
     private float lastDistanceToBall;
 
     //Reward
@@ -105,7 +104,6 @@ public class Player1step : Agent
 
     public void OnRacketHit(Collision collision)
     {
-        //fase 2
         float height = collision.gameObject.GetComponent<Rigidbody>().position.y;
 
         if (height > -0.63f && height < 1f)

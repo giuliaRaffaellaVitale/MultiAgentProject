@@ -20,7 +20,6 @@ public class P1vs1 : Agent
     public bool isPlayerServing;
 
     public float moveSpeed = 0.2f;
-    public float rotationSpeed = 180f;
     private float lastDistanceToBall;
 
     //Reward
@@ -29,8 +28,6 @@ public class P1vs1 : Agent
     private const float movementReward = 0.1f;
 
     //Penality
-    private const float outOfFieldPenalty = -0.3f;
-    private const float ballPenalty = -0.5f;
     private const float tooClosePenality = -0.1f;
     private const float inactivityPenality = -0.05f;
 
