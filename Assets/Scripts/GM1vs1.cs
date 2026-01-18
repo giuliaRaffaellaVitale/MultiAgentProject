@@ -91,13 +91,11 @@ public class GM1vs1 : MonoBehaviour
     {
         if (side == CourtSide.Red)
         {
-            // rimbalza 2 volte nel campo rosso ? punto BLU
             AssignReward(Team1vs1.Blue, winningReward);
             AssignReward(Team1vs1.Red, loserPenalty);
         }
         else if (ball.lastBounceSide == CourtSide.Blue)
         {
-            // rimbalza 2 volte nel campo blu ? punto ROSSO
             AssignReward(Team1vs1.Red, winningReward);
             AssignReward(Team1vs1.Blue, loserPenalty);
         }
@@ -147,8 +145,6 @@ public class GM1vs1 : MonoBehaviour
         
         redTeam.EndEpisode();
         blueTeam.EndEpisode();
-
-        //ballRb.isKinematic = false;
     }
 
 
@@ -166,8 +162,6 @@ public class GM1vs1 : MonoBehaviour
 
         ballRb.linearVelocity = Vector3.zero;
         ballRb.angularVelocity = Vector3.zero;
-
-        //ballRb.isKinematic = true;  
 
         ballRb.transform.position = GetBallSpawnTransform().position;
         ball.timer = 0f;
