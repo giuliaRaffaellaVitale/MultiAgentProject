@@ -8,7 +8,6 @@ public class Racket1Step : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            //Debug.Log("racket collided with ball");
             agent.OnRacketHit(collision);
         }
     }

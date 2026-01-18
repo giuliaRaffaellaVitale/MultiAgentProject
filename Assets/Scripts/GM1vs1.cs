@@ -30,19 +30,16 @@ public class GM1vs1 : MonoBehaviour
     public GameState1vs1 gameState = GameState1vs1.Serve;
 
     // Reward
-    private const float winningReward = 1f;
-    private const float validBounceReward = 0.1f;
+    private const float winningReward = 5f;
+    private const float validBounceReward = 0.5f;
 
     // Penalty
-    private const float loserPenalty = -1f;
-    private const float netTouchedPenalty = -0.5f;
-    private const float invalidBouncePenalty = -0.2f;
-    private const float serveTimeExceededPenalty = 0.01f;
+    private const float loserPenalty = -3f;
+    private const float invalidBouncePenalty = -0.7f;
 
     void Start()
     {
         SetServe(servingTeam);
-        Time.timeScale = 2f;
     }
 
     public void SetRally()
@@ -151,9 +148,7 @@ public class GM1vs1 : MonoBehaviour
         redTeam.EndEpisode();
         blueTeam.EndEpisode();
 
-        ballRb.isKinematic = false;
-        //Invoke(nameof(ResetRally), resetDelay);
-
+        //ballRb.isKinematic = false;
     }
 
 
@@ -172,7 +167,7 @@ public class GM1vs1 : MonoBehaviour
         ballRb.linearVelocity = Vector3.zero;
         ballRb.angularVelocity = Vector3.zero;
 
-        ballRb.isKinematic = true;  
+        //ballRb.isKinematic = true;  
 
         ballRb.transform.position = GetBallSpawnTransform().position;
         ball.timer = 0f;

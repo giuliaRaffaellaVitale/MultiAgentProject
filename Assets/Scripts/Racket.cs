@@ -9,7 +9,6 @@ public class Racket : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            //Debug.Log("racket collided with ball");
             gameManager.SetRally();
             agent.OnRacketHit(collision);
         }

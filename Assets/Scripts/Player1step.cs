@@ -25,12 +25,6 @@ public class Player1step : Agent
 
     //Penality
     private const float tooClosePenality = -0.05f;
-
-    
-    public void Start()
-    {
-        //Time.timeScale = 2f;
-    }
     
 
     public override void Initialize()
@@ -75,14 +69,11 @@ public class Player1step : Agent
     {
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
-        float rotate = actions.ContinuousActions[2];
         float swing = actions.ContinuousActions[3];
 
         // Movement
         Vector3 move = new Vector3(moveX, 0, moveZ);
         rb.AddForce(move * moveSpeed, ForceMode.VelocityChange);
-
-        //transform.Rotate(Vector3.up, rotate * rotationSpeed * Time.fixedDeltaTime);
 
         // Swing
         HandleSwing(swing);
@@ -92,7 +83,6 @@ public class Player1step : Agent
         lastDistanceToBall = currentDist;
 
         AddReward(delta * movementReward); // reward if the agent moves towards the ball
-
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -107,7 +97,7 @@ public class Player1step : Agent
     {
         if (swingInput > 0.5f)
         {
-            racketPivot.localRotation = Quaternion.Euler(-60f, 0, 0);
+            racketPivot.localRotation = Quaternion.Euler(-30f, 0, 0);
         }
         else
             racketPivot.localRotation = Quaternion.identity;
@@ -123,8 +113,6 @@ public class Player1step : Agent
             AddReward(goodTimingReward); // good timing
         }
 
-        //Vector3 dir = (ballRb.position - racketPivot.position);
-
         Vector3 dir = (ballRb.position - rb.position).normalized;
         dir.y = 0.3f;
 
@@ -133,7 +121,7 @@ public class Player1step : Agent
         AddReward(movementReward * alignment);
 
         ballRb.linearVelocity = Vector3.zero;
-        ballRb.AddForce(dir * 6.5f, ForceMode.VelocityChange);
+        ballRb.AddForce(dir * 8f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
     }

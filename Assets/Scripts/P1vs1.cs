@@ -2,6 +2,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static GM1vs1;
 
 public class P1vs1 : Agent
@@ -23,15 +24,15 @@ public class P1vs1 : Agent
     private float lastDistanceToBall;
 
     //Reward
-    private const float racketHitReward = 1f;
-    private const float goodTimingReward = 0.15f;
-    private const float movementReward = 0.01f;
+    private const float racketHitReward = 2f;
+    private const float goodTimingReward = 0.30f;
+    private const float movementReward = 0.1f;
 
     //Penality
     private const float outOfFieldPenalty = -0.3f;
     private const float ballPenalty = -0.5f;
-    private const float tooClosePenality = -0.05f;
-    private const float inactivityPenality = -0.005f;
+    private const float tooClosePenality = -0.1f;
+    private const float inactivityPenality = -0.05f;
 
     public void SetIsServing(bool player)
     {
@@ -78,7 +79,6 @@ public class P1vs1 : Agent
     {
         float moveX = actions.ContinuousActions[0];
         float moveZ = actions.ContinuousActions[1];
-        float rotate = actions.ContinuousActions[2];
         float swing = actions.ContinuousActions[3];
 
         // Movement
@@ -112,7 +112,7 @@ public class P1vs1 : Agent
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("net") || collision.gameObject.CompareTag("grid"))
+        if (collision.gameObject.CompareTag("net") || collision.gameObject.CompareTag("grid") || collision.gameObject.CompareTag("courtNet"))
         {
             AddReward(tooClosePenality);
         }
@@ -122,7 +122,7 @@ public class P1vs1 : Agent
     {
         if (swingInput > 0.5f)
         {
-            racketPivot.localRotation = Quaternion.Euler(-60f, 0, 0);
+            racketPivot.localRotation = Quaternion.Euler(-30f, 0, 0);
         }
         else
             racketPivot.localRotation = Quaternion.identity;
@@ -134,7 +134,6 @@ public class P1vs1 : Agent
 
         if (height > -0.63f && height < 1f)
         {
-            //Debug.Log("good timing");
             AddReward(goodTimingReward); // good timing
         }
 
@@ -142,7 +141,7 @@ public class P1vs1 : Agent
         dir.y = 0.3f;
 
         ballRb.linearVelocity = Vector3.zero;
-        ballRb.AddForce(dir * 6.5f, ForceMode.VelocityChange);
+        ballRb.AddForce(dir * 8f, ForceMode.VelocityChange);
 
         AddReward(racketHitReward);
     }

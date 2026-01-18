@@ -35,7 +35,7 @@ public class BallController : MonoBehaviour
     private const float bodyCollisionPenalty = -0.3f;
 
     // reward for good reception
-    private const float receptionReward = 0.5f;
+    private const float receptionReward = 2f;
 
     private void Awake()
     {
@@ -148,36 +148,13 @@ public class BallController : MonoBehaviour
             gameManager.AssignReward(lastTeamTouched, bodyCollisionPenalty);
         }
     }
-/*
-    public void StartServe()
-    {
-        ballRb.isKinematic = false;
-        isServeBall = false;
-        //gameManager.gameState = GameState.Rally;
-    }
 
-
-    public void PlaceBall(Team servingTeam)
-    {
-        bounceCount = 0;
-
-        ballRb.isKinematic = true;
-
-        if (servingTeam == Team.Red)
-            ballRb.position = BallRedServing.position;
-        else
-            ballRb.position = BallBlueServing.position;
-
-        isServeBall = true;
-    }
-*/
     void HandleGroundBounce(CourtSide lastBounceSide)
     {
         if (lastTeamTouched == Team1vs1.None)
         {
             isReceivable = false;
             gameManager.InvalidBounce(Team1vs1.None);
-            Debug.Log("None");
             return;
         }
 
